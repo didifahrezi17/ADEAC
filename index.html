@@ -3,33 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADE AC Service</title>
+    <title>Service ADE AC</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-
     <script src="https://unpkg.com/feather-icons"></script>
-
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- NAVBAR -->
+    <!--Navbar Mulai-->
     <nav class="navbar">
       <div class="nav-logo">
         <img src="img/logo.png" alt="" class="logo-img" />
         <a href="#">ADE <span>AC</span></a>
       </div>
 
-      <div class="menu">
-        <a href="#">HOME</a>
-        <a href="#layanan">LAYANAN</a>
-        <a href="#tentang">TENTANG</a>
-        <a href="#harga">HARGA</a>
-        <a href="#kontak">KONTAK</a>
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="#layanan">Layanan Kami</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#harga">Daftar Harga</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#harga" id="shopping-cart"
+          ><i data-feather="shopping-cart"></i
+        ></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
 
@@ -44,11 +48,16 @@
           Kota Pariaman.
         </p>
 
-        <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp" class="btn">Hubungi Sekarang</a>
+        <a
+          href="https://wa.me/6282171540738"
+          alt="Hubungi di WhatsApp"
+          class="btn"
+          >Hubungi Sekarang</a
+        >
       </div>
 
       <div class="hero-img">
-        <img src="img/foto ac.png" alt="Foto AC" />
+        <img src="img/header-bg.png" alt="Foto AC" />
       </div>
     </section>
 
@@ -156,7 +165,7 @@
           <h3>AC Sharp 1/2 PK</h3>
           <img src="img/sharp.webp" alt="AC Sharp 1/2 PK" />
           <p>Rp 3.550.000</p>
-          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp" 
+          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp"
             ><button>Pesan Sekarang</button></a
           >
         </div>
@@ -165,7 +174,7 @@
           <h3>AC LG 1/2 PK</h3>
           <img src="img/LG.avif" alt="AC LG 1/2 PK" />
           <p>Rp 3.500.000</p>
-          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp" 
+          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp"
             ><button>Pesan Sekarang</button></a
           >
         </div>
@@ -174,7 +183,7 @@
           <h3>AC Panasonic 1/2 PK</h3>
           <img src="img/panasonic.jpeg" alt="AC Panasonic 1/2 PK" />
           <p>Rp 4.500.000</p>
-          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp" 
+          <a href="https://wa.me/6282171540738" alt="Hubungi di WhatsApp"
             ><button>Pesan Sekarang</button></a
           >
         </div>
@@ -224,9 +233,15 @@
         ></iframe>
       </div>
     </section>
+    <section>
+      <footer class="footer">
+        <p>&copy; 2024 ADE AC. All rights reserved.</p>
+      </footer>
+    </section>
 
     <script>
       feather.replace();
     </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
