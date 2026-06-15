@@ -1,15 +1,21 @@
+:root {
+  --bg: #f9fcff;
+  --pendukung: linear-gradient(135deg, #0f6b8c, #2aa9c9);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #f9fcff;
+  font-family: "poppins", sans-serif;
+  background-color: var(--bg);
   color: #1a2c3e;
-  scroll-behavior: smooth;
-  line-height: 1.5;
 }
 
 /* navbar start */
@@ -18,62 +24,61 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 7%;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  transition: all 0.2s;
+  z-index: 9999;
 }
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .logo-img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 .nav-logo a {
-  font-size: 1.7rem;
-  font-weight: 800;
-  letter-spacing: -0.3px;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: #0f3b4f;
   text-decoration: none;
+  font-style: italic;
 }
-.nav-logo a span {
+.navbar .nav-logo a span {
   color: #0f6b8c;
   background: linear-gradient(135deg, #0f6b8c, #2aa9c9);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-/*navbar end*/
 
-/*menu start*/
-.menu {
+.navbar .navbar-nav {
   display: flex;
-  gap: 1.4rem;
-  align-items: center;
+  gap: 2rem;
 }
-.menu a {
+.navbar .navbar-nav a {
+  display: center;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #1e3a4d;
+  font-size: 1.2rem;
+  color: #010101;
   transition: 0.2s;
   position: relative;
+  font-weight: 600;
 }
-.menu a:hover {
+.navbar .navbar-nav a:hover {
   color: #0f6b8c;
 }
-.menu a::after {
+.navbar .navbar-nav a::after {
   content: "";
+  display: block;
   position: absolute;
   bottom: -6px;
   left: 0;
@@ -83,11 +88,74 @@ body {
   transition: 0.2s;
   border-radius: 2px;
 }
-.menu a:hover::after {
+.navbar .navbar-nav a:hover::after {
   width: 100%;
 }
-/*menu end*/
+.navbar .navbar-extra a {
+  color: black;
+  margin: 0 0.5rem;
+}
 
+#hamburger-menu {
+  display: none;
+}
+
+/*navbar  end*/
+/* responsive Desktop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* responsive Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 20rem;
+    height: 100vh;
+    transition: 0.3s;
+    flex-direction: column;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  .navbar .navbar-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 2rem; /* sama dengan padding kiri */
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #2aa9c9, #0f6b8c);
+    transition: 0.2s linear;
+  }
+  .navbar .navbar-nav a:hover::after,
+  .navbar .navbar-nav a.active::after {
+    width: 20%;
+  }
+  /* responsive Mobile */
+  @media (max-width: 480px) {
+    html {
+      font-size: 55%;
+    }
+  }
+}
 /*hero section start*/
 .hero {
   display: flex;
@@ -99,7 +167,7 @@ body {
   gap: 2rem;
 }
 .hero-text {
-  flex: 1;
+  flex: 0.9;
   min-width: 280px;
 }
 .hero-text h2 {
@@ -107,8 +175,8 @@ body {
   font-weight: 800;
   line-height: 1.2;
   background: linear-gradient(to right, #155e75, #1e7b9e);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin-bottom: 1.2rem;
 }
@@ -133,20 +201,7 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 14px 26px rgba(15, 107, 140, 0.35);
 }
-.hero-img {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-img img {
-  max-width: 380px;
-  width: 100%;
-  filter: drop-shadow(0 20px 25px -12px rgba(0, 0, 0, 0.2));
-}
-
-
 /*hero section end*/
-
 /*sections start*/
 section {
   padding: 90px 7%;
@@ -228,7 +283,6 @@ h2 {
   font-size: 1.05rem;
   color: #2c5a6e;
   line-height: 1.6;
-  
 }
 /* tentang end */
 
@@ -319,6 +373,12 @@ h2 {
   text-align: center;
   border-radius: 0 50px 0 0;
 }
+
+.kontak h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+}
 .pesan {
   display: inline-flex;
   align-items: center;
@@ -348,6 +408,12 @@ h2 {
   overflow: hidden;
   box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
 }
+.map h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+}
 .map iframe {
   width: 100%;
   height: 380px;
@@ -359,47 +425,6 @@ h2 {
 /* sections end */
 
 /* footer sederhana */
-.footer {
-  background: #0b2b38;
-  color: #cbd5e1;
+.footer{
   text-align: center;
-  padding: 2rem;
-  font-size: 0.85rem;
-}
-
-/* responsif */
-@media (max-width: 850px) {
-  .navbar {
-    padding: 1rem 5%;
-  }
-  .menu {
-    gap: 1.2rem;
-  }
-  .hero-text h2 {
-    font-size: 2rem;
-  }
-  .hero {
-    padding: 120px 5% 60px;
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  section {
-    padding: 60px 5%;
-  }
-  h2 {
-    font-size: 1.9rem;
-  }
-}
-
-@media (max-width: 550px) {
-  .menu a {
-    font-size: 0.75rem;
-  }
-  .hero-text h2 {
-    font-size: 1.8rem;
-  }
 }
