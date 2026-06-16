@@ -154,6 +154,15 @@ body {
     html {
       font-size: 55%;
     }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 140px 7% 90px;
+      background: linear-gradient(130deg, #eef5fc 0%, #ffffff 100%);
+      gap: 2rem;
+    }
     #hamburger-menu {
       display: inline-block;
     }
